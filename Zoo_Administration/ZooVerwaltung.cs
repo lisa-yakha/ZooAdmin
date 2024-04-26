@@ -78,21 +78,33 @@ public class ZooVerwaltung
         {
             mitarbeiterNr = NummerVonEingabe(antwort);
         }
+        Mitarbeiter mitarbeiter = mitarbeiterListe.FirstOrDefault(m => m.getMitarbeiterNr() == mitarbeiterNr);
 
-        if (mitarbeiterNr == 1 || mitarbeiterNr == 2)
-        {
-            Console.WriteLine("Geben Sie das Passwort ein:");
-            string passwort = NutzerEingabe();
-            if (passwort == "12345")
-            {
-                Console.WriteLine("Willkommen in der Zoo Verwaltungs Software!");
-                NutzerMenu1();
-            }
-        }
+        if (mitarbeiter == null)
+            Console.WriteLine("Das Mitarbeiternummer ist falsch. Bitte starten Sie das Programm neu.");
         else
         {
-            Console.WriteLine("Sie haben keine valide Nummer eingegeben. Bitte starten Sie das Programm neu.");
+            Console.WriteLine("Geben Sie das Passwort ein:");
+            string passwortEingabe = NutzerEingabe();
+
+            if (passwortEingabe == mitarbeiter.getPasswort())
+            {
+                if (mitarbeiter.getName() == "Hildegard Grün")
+                {
+                    //TODO: Ausgabe aller Tiere hinzufügen
+                    Console.WriteLine("Willkommen in der Zoo Verwaltungs Software!");
+                }
+                else
+                    Console.WriteLine("Willkommen in der Zoo Verwaltungs Software!");
+                NutzerMenu1();
+            }
+            else
+            {
+                Console.WriteLine("Das Passwort ist falsch. Bitte starten Sie das Programm neu.");
+            }
+
         }
+
     }
     /// <summary>
     /// Nutzer Eingabe
@@ -244,22 +256,22 @@ public class ZooVerwaltung
         gehegeListe.Add(gehege3);
 
         // Erschaffe Mitarbeiter
-        mitarbeiterListe.Add(new Mitarbeiter(1, "Herbert Grün", 88, 6200, "ZoodirektorIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(2, "Hildegard Grün", 88, 6200, "ZoodirektorIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(3, "Hannelore Specht", 34, 2300, "TierpflegerIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(4, "Friedrich Müller", 45, 3200, "TierpflegerIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(5, "Elisa Grün", 23, 450, "KassiererIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(6, "Ali Mohammed", 19, 450, "KassiererIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(7, "Marianne Jakobs", 23, 3100, "Verwaltungskraft"));
-        mitarbeiterListe.Add(new Mitarbeiter(8, "Niko Bart", 21, 3000, "Verwaltungskraft"));
-        mitarbeiterListe.Add(new Mitarbeiter(9, "Franz Hubert", 35, 3300, "Verwaltungskraft"));
+        mitarbeiterListe.Add(new Mitarbeiter(1, "Herbert Grün", 88, 6200, "ZoodirektorIn", "12345"));
+        mitarbeiterListe.Add(new Mitarbeiter(2, "Hildegard Grün", 88, 6200, "ZoodirektorIn","12346"));
+        mitarbeiterListe.Add(new Mitarbeiter(3, "Hannelore Specht", 34, 2300, "TierpflegerIn", "98765"));
+        mitarbeiterListe.Add(new Mitarbeiter(4, "Friedrich Müller", 45, 3200, "TierpflegerIn", "56789"));
+        mitarbeiterListe.Add(new Mitarbeiter(5, "Elisa Grün", 23, 450, "KassiererIn", "13579"));
+        mitarbeiterListe.Add(new Mitarbeiter(6, "Ali Mohammed", 19, 450, "KassiererIn", "24680"));
+        mitarbeiterListe.Add(new Mitarbeiter(7, "Marianne Jakobs", 23, 3100, "Verwaltungskraft", "25912"));
+        mitarbeiterListe.Add(new Mitarbeiter(8, "Niko Bart", 21, 3000, "Verwaltungskraft", "25911"));
+        mitarbeiterListe.Add(new Mitarbeiter(9, "Franz Hubert", 35, 3300, "Verwaltungskraft", "25913"));
 
         // Erschaffe Tiere
         string[] loewen = { "Anton", "Bernd", "Claudia", "Ditrich" };
         string[] ziegen = { "Ella", "Franzi", "Gertrud", "Hilda", "Inge", "Jakob", "Karl" };
         string[] affen = { "Leopold", "Malte", "Ni", "Oppi", "Paulus" };
 
-        Random random = new Random();
+        Random random = new Random(); 
         for (int i = 0; i < loewen.Length; i++)
         {
             int zufallsAlter = random.Next(1, 7);
