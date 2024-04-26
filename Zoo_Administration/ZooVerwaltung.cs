@@ -145,13 +145,13 @@ public class ZooVerwaltung
 				NutzerOption1();
 				break;
 			case 2:
-				//Methodenaufruf für Tiere
-				break;
+                TierVerwaltung();
+                break;
 			case 3:
-				//Methodenaufruf für Mitarbeiter
+                MitarbeiterVerwaltung();
 				break;
 			case 4:
-				//Methodenaufruf für Gehege
+                GehegeVerwalten();
 				break;
 			case 5:
 				//Methodenaufruf für Gehegeverwaltung
@@ -169,7 +169,235 @@ public class ZooVerwaltung
 	/// <summary>
 	/// Nutzer Eingabe für die Option 1 - Ausgabe
 	/// </summary>
-	public static void NutzerOption1()
+    ///
+    
+    public static void TierVerwaltung()
+    {
+        string[] verwaltungsOptions = new string[]
+        {
+            "1) Tier hinzufügen.",
+            "2) Tier löschen."
+        };
+
+        //Frage den Nutzer was er ausgeben möchte:
+        Console.Clear();
+        Console.WriteLine("Was wollen Sie machen? Geben Sie eine Zahl ein: \n");
+        foreach (string option in verwaltungsOptions)
+        {
+            Console.WriteLine(option);
+        }
+
+        string antwort = NutzerEingabe();
+        Console.Clear();
+        if (!string.IsNullOrEmpty(antwort))
+        {
+            //Verarbeite die Nutzerantwort für die Ausgabe
+            switch(antwort)
+            {
+                case "1":
+                    int newTierID=tierListe.Count;
+                    Console.WriteLine("Gib das Alter des Tieres an");
+                    string tierAlter = NutzerEingabe();
+                    Console.Clear();
+                    foreach(Gehege availableGehege in gehegeListe)
+                    {
+                        Console.Write(availableGehege);
+                    }
+                    Console.WriteLine("Gib die Gehegenummer ein, in die das Tier soll.");
+                    string gehegeNummer = NutzerEingabe();
+                    Console.Clear();
+                    Console.WriteLine("Gib den Namen des Tieres an");
+                    string tierName = NutzerEingabe();
+                    Console.Clear();
+                    Console.WriteLine("Gib die Art des Tieres an");
+                    string tierArt = NutzerEingabe();
+                    tierListe.Add(new Tier(newTierID, Convert.ToInt32(tierAlter), Convert.ToInt32(gehegeNummer), tierName, tierArt));
+                    Console.WriteLine("Tier erstellt: ");
+                    Console.WriteLine(tierListe[newTierID]);
+                    Console.Clear();
+                    NutzerMenu1();
+                    break;
+                case "2":
+                    foreach(Tier tierEntry in tierListe)
+                    {
+                        //call method to output every animal to see what to delete, and to see ID
+                        Console.WriteLine(tierEntry);
+                    }
+                    Console.WriteLine("\nWelches Tier soll gelöscht werden? Bitte gib eine Tiernummer ein");
+                    string deleteAt = NutzerEingabe();
+                    foreach (Tier tier in tierListe)
+                    {
+                        if (tier.getTierNr() == Convert.ToInt32(deleteAt))
+                        {
+                            tierListe.Remove(tier);
+                            break;
+                        }
+                    }
+                    Console.Clear();
+                    NutzerMenu1();
+                    break;
+                default:
+                    Console.WriteLine("Bitte gib eine Auswahlmöglichkeit an");
+                    TierVerwaltung();
+                    break;
+            }
+        }
+        else 
+        {
+            Console.WriteLine("Bitte gib eine Auswahlmöglichkeit an");
+            TierVerwaltung();
+        }
+    }
+
+    public static void MitarbeiterVerwaltung()
+    {
+        //mitarbeiterListe.Add(new Mitarbeiter(1, "Herbert Grün", 88, 6200, "ZoodirektorIn"));
+
+        string[] verwaltungsOptions = new string[]
+        {
+            "1) Mitarbeiter hinzufügen.",
+            "2) Mitarbeiter löschen."
+        };
+
+        //Frage den Nutzer was er ausgeben möchte:
+        Console.Clear();
+        Console.WriteLine("Was wollen Sie machen? Geben Sie eine Zahl ein: \n");
+        foreach (string option in verwaltungsOptions)
+        {
+            Console.WriteLine(option);
+        }
+
+        string antwort = NutzerEingabe();
+        Console.Clear();
+        if (!string.IsNullOrEmpty(antwort))
+        {
+            //Verarbeite die Nutzerantwort für die Ausgabe
+            switch (antwort)
+            {
+                case "1":
+                    int mitarbeiterID = mitarbeiterListe.Count;
+                    Console.WriteLine("Gib den Namen des Mitarbeiters an.");
+                    string mitarbeiterName = NutzerEingabe();
+                    Console.Clear();
+                    Console.WriteLine("Gib das Alter des Mitarbeiters an.");
+                    string mitarbeiterAlter = NutzerEingabe();
+                    Console.Clear();
+                    Console.WriteLine("Gib das Gehalt des Mitarbeiters an");
+                    string mitarbeiterGehalt = NutzerEingabe();
+                    Console.Clear();
+                    Console.WriteLine("Gib die Job Bezeichnung des Mitarbeiters an");
+                    string mitarbeiterJobBezeichnung = NutzerEingabe();
+
+                    mitarbeiterListe.Add(new Mitarbeiter(mitarbeiterID, mitarbeiterName, Convert.ToInt32(mitarbeiterAlter), Convert.ToInt32(mitarbeiterGehalt), mitarbeiterJobBezeichnung));
+                    Console.Clear();
+                    NutzerMenu1();
+                    break;
+                case "2":
+                    foreach(Mitarbeiter arbeiter in mitarbeiterListe)
+                    {
+                        Console.WriteLine(arbeiter);
+                    }
+
+                    Console.WriteLine("\nWelcher Mitarbeiter soll gelöscht werden? Bitte gib eine Tiernummer ein");
+                    string deleteAt = NutzerEingabe();
+                    foreach (Mitarbeiter arbeiter in mitarbeiterListe)
+                    {
+                        if (arbeiter.getMitarbeiterNr() == Convert.ToInt32(deleteAt))
+                        {
+                            mitarbeiterListe.Remove(arbeiter);
+                            break;
+                        }
+                    }
+                    Console.Clear();
+                    NutzerMenu1();
+                    break;
+                default:
+                    Console.WriteLine("Bitte gib eine Auswahlmöglichkeit an");
+                    MitarbeiterVerwaltung();
+                    break;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Bitte gib eine Auswahlmöglichkeit an");
+            MitarbeiterVerwaltung();
+        }
+    }
+
+    public static void GehegeVerwalten()
+    {
+
+        string[] verwaltungsOptions = new string[]
+        {
+            "1) Gehege hinzufügen.",
+            "2) Gehege löschen."
+        };
+
+        //Frage den Nutzer was er ausgeben möchte:
+        Console.Clear();
+        Console.WriteLine("Was wollen Sie machen? Geben Sie eine Zahl ein: \n");
+        foreach (string option in verwaltungsOptions)
+        {
+            Console.WriteLine(option);
+        }
+
+        string antwort = NutzerEingabe();
+        Console.Clear();
+
+        if (!string.IsNullOrEmpty(antwort))
+        {
+            //Verarbeite die Nutzerantwort für die Ausgabe
+            switch (antwort)
+            {
+                case "1":
+                    int GehegeID = gehegeListe.Count;
+                    Console.WriteLine("Gib die kleinste Anzahl von Tieren für das Gehege an.");
+                    string GehegeMin = NutzerEingabe();
+                    Console.Clear();
+                    Console.WriteLine("Gib die gößte Anzahl von Tieren für das Gehege an.");
+                    string GehegeMax = NutzerEingabe();
+                    Console.Clear();
+                    Console.WriteLine("Gib den Namen des Geheges an.");
+                    string GehegeName = NutzerEingabe();
+
+                    gehegeListe.Add(new Gehege(GehegeID, Convert.ToInt32(GehegeMax), Convert.ToInt32(GehegeMin), GehegeName));
+                    Console.Clear();
+                    NutzerMenu1();
+                    break;
+                case "2":
+                    foreach (Gehege currentGehege in gehegeListe)
+                    {
+                        Console.WriteLine(currentGehege);
+                    }
+
+                    Console.WriteLine("\nWelcher Mitarbeiter soll gelöscht werden? Bitte gib eine Tiernummer ein");
+                    string deleteAt = NutzerEingabe();
+                    foreach (Gehege DeleteGehege in gehegeListe)
+                    {
+                        if (DeleteGehege.getGehegeNr() == Convert.ToInt32(deleteAt))
+                        {
+                            gehegeListe.Remove(DeleteGehege);
+                            break;
+                        }
+                    }
+                    Console.Clear();
+                    NutzerMenu1();
+                    break;
+                default:
+                    Console.WriteLine("Bitte gib eine Auswahlmöglichkeit an");
+                    GehegeVerwalten();
+                    break;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Bitte gib eine Auswahlmöglichkeit an");
+            GehegeVerwalten();
+        }
+
+    }
+
+    public static void NutzerOption1()
 	{
 		//Mögliche Nutzer anfragen
 		string[] nutzerFragen = new string[]
@@ -290,6 +518,7 @@ public class ZooVerwaltung
     /// <summary>
     /// Endes
     /// </summary>
+    /// 
     public static void Beenden()
     {
         Console.WriteLine("Auf Wiedersehen!");
