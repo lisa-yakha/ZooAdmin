@@ -25,8 +25,12 @@ public class ZooVerwaltung
         NutzerEingabe();
     }
 
+    /// <summary>
+    /// Diese Methode kann für alle Eingaben des Nutzers genutzt werden
+    /// </summary>
+    /// <returns>Die Eingabe des Nutzers als String oder ein leerer String, wenn etwas schief gelaufen ist in dem IO System.</returns>
 
-	public static string NutzerEingabe()
+    public static string NutzerEingabe()
 	{
 		// Fehlererkennung, falls etwas bei der Eingabe schief geht, hierdran bitte nichts ändern
 		string antwort = "";
@@ -42,6 +46,11 @@ public class ZooVerwaltung
 		return antwort;
 	}
 
+    /// <summary>
+    /// Generiert die Nummer einer Eingabe
+    /// </summary>
+    /// <param name="antwort">Übergebene Nutzer-Eingabe</param>
+    /// <returns>Nummer aus der Nutzer-Eingabe</returns>
 
     private static int NummerVonEingabe(string antwort)
     {
@@ -54,7 +63,9 @@ public class ZooVerwaltung
             return -1;
         }
     }
-
+    /// <summary>
+    /// Hier haben wir eine einfache Verifikation am Anfang der Software
+    /// </summary>
     public static void Verifikation()
     {
         Console.WriteLine("Geben Sie Ihre Mitarbeiternummer ein:");
@@ -83,7 +94,9 @@ public class ZooVerwaltung
             Console.WriteLine("Sie haben keine valide Nummer eingegeben. Bitte starten Sie das Programm neu.");
         }
     }
-
+    /// <summary>
+    /// Nutzer Eingabe
+    /// </summary>
     public static void NutzerMenu1()
     {
         //Mögliche Nutzer anfragen
@@ -112,7 +125,13 @@ public class ZooVerwaltung
             VerarbeiteNutzerMenu1(antwort);
         }
     }
-	public static void VerarbeiteNutzerMenu1(string antwort)
+
+    /// <summary>
+    /// Soll die Nutzerantwort verarbeiten, je nach dem was gewollt ist, neue Sequenz an Fragen und Antworten einleiten
+    /// </summary>
+    /// <param name="antwort">Eingabe eines Nutzers</param>
+
+    public static void VerarbeiteNutzerMenu1(string antwort)
 	{
 		int nummer = NummerVonEingabe(antwort);
 		//Unterscheidung der eingegebenen Nummer
@@ -205,7 +224,11 @@ public class ZooVerwaltung
 				break;
 		}
 	}
-	       public static void Initialisieren()
+
+    /// <summary>
+    /// Initialisiert die Zoo Verwaltung mit hardcodierten Daten
+    /// </summary>
+    public static void Initialisieren()
     {
         // Initialisiere Listen
         gehegeListe = new List<Gehege>();
@@ -264,7 +287,9 @@ public class ZooVerwaltung
         gehegeVerwaltung.HinzufÜgen((Gehege)gehegeListe[1], (Mitarbeiter)mitarbeiterListe[7], (Mitarbeiter)mitarbeiterListe[3]);
         gehegeVerwaltung.HinzufÜgen((Gehege)gehegeListe[2], (Mitarbeiter)mitarbeiterListe[8], (Mitarbeiter)mitarbeiterListe[3]);
     }
-
+    /// <summary>
+    /// Endes
+    /// </summary>
     public static void Beenden()
     {
         Console.WriteLine("Auf Wiedersehen!");
