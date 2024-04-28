@@ -494,6 +494,9 @@ public class ZooVerwaltung
                     List<Gehege> availableGehege = new List<Gehege>();
                     foreach(Gehege G in gehegeListe) { availableGehege.Add(G); }
                     List<GMTupel> VerwalungsListe = gehegeVerwaltung.AlleAusgeben();
+                    List<Mitarbeiter> Arbeiter = new List<Mitarbeiter>();
+                    List<Mitarbeiter> Verwaltungskraft = new List<Mitarbeiter>();
+                    
                     foreach(Gehege testGehege in gehegeListe)
                     {
                         foreach(GMTupel tupel in VerwalungsListe)
@@ -513,10 +516,56 @@ public class ZooVerwaltung
                         NutzerMenu1();
                         break;
                     }
-                    Console.WriteLine(availableGehege.Count);
-                    break;
+                    //called if a gehege is not managed by staff yet, returns current number of unmanaged cages
+                    else
+                    {
+                        foreach (Gehege gehege in availableGehege)
+                        {
+                            Console.WriteLine(gehege);
+                        }
+                        string chosenGehege = NutzerEingabe();
+                        Console.Clear();
+                        foreach(Mitarbeiter arbeiter in mitarbeiterListe)
+                        {
+                            if(arbeiter.getJobBezeichnung() == "TierpflegerIn")
+                            {
+                                Console.WriteLine(arbeiter);
+                                Arbeiter.Add(arbeiter);
+                            }
+                        }
+                        Console.WriteLine("Wähle einen Tierpfleger für das Gehege");
+                        string chosenArbeiter = NutzerEingabe();
+                        Console.Clear();
+                        foreach (Mitarbeiter verwalter in mitarbeiterListe)
+                        {
+                            if (verwalter.getJobBezeichnung() == "Verwaltungskraft")
+                            {
+                                Console.WriteLine(verwalter);
+                                Verwaltungskraft.Add(verwalter);
+                            }
+                        }
+                        Console.WriteLine("Wähle einen Verwaltungskraft für das Gehege");
+                        string chosenVerwaltungskraft = NutzerEingabe();
+
+                        gehegeVerwaltung.HinzufÜgen((Gehege)gehegeListe[Convert.ToInt32(chosenGehege)-1], (Mitarbeiter)mitarbeiterListe[Convert.ToInt32(chosenArbeiter) - 1], (Mitarbeiter)mitarbeiterListe[Convert.ToInt32(chosenVerwaltungskraft) - 1]);
+                        Console.Clear();
+                        NutzerMenu1();
+                        break;
+
+
+                    }
                 case "2":
-                    
+                    List<GMTupel> GehegeVerwaltungsListe = gehegeVerwaltung.AlleAusgeben();
+                    int indexOfOBJ = 0;
+                    foreach(GMTupel TupleToPrint in GehegeVerwaltungsListe)
+                    {
+                        Console.WriteLine("" + indexOfOBJ + ", " + TupleToPrint.Gehege.getBezeichnung() + ", " + TupleToPrint.Mitarbeiter1.Name + ", " + TupleToPrint.Mitarbeiter2.Name);
+                        indexOfOBJ++;
+                    }
+                    Console.WriteLine("\n Gib die Nummer der zu Löschenden Gehegeverwaltung ein");
+                    string verwaltungToDelete = NutzerEingabe();
+                    gehegeVerwaltung.Loeschen(GehegeVerwaltungsListe[Convert.ToInt32(verwaltungToDelete)]);
+                    Console.Clear();
                     NutzerMenu1();
                     break;
                 case "3":
