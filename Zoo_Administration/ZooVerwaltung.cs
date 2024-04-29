@@ -306,8 +306,11 @@ public class ZooVerwaltung
                     Console.Clear();
                     Console.WriteLine("Gib die Job Bezeichnung des Mitarbeiters an");
                     string mitarbeiterJobBezeichnung = NutzerEingabe();
+                    Console.Clear();
+                    Console.WriteLine("Gib das Passwort an");
+                    string mitarbeiterPasswort = NutzerEingabe();
 
-                    mitarbeiterListe.Add(new Mitarbeiter(mitarbeiterID, mitarbeiterName, Convert.ToInt32(mitarbeiterAlter), Convert.ToInt32(mitarbeiterGehalt), mitarbeiterJobBezeichnung));
+                    mitarbeiterListe.Add(new Mitarbeiter(mitarbeiterID, mitarbeiterName, Convert.ToInt32(mitarbeiterAlter), Convert.ToInt32(mitarbeiterGehalt), mitarbeiterJobBezeichnung, mitarbeiterPasswort));
                     Console.Clear();
                     NutzerMenu1();
                     break;
@@ -558,7 +561,7 @@ public class ZooVerwaltung
                     VerarbeiteNutzerEingabeOption1("4");
                     Console.WriteLine("\n Gib die Nummer der zu Löschenden Gehegeverwaltung ein");
                     string verwaltungToDelete = NutzerEingabe();
-                    gehegeVerwaltung.Loeschen(GehegeVerwaltungsListe[Convert.ToInt32(verwaltungToDelete)]);
+                    gehegeVerwaltung.Loeschen((gehegeVerwaltung.AlleAusgeben())[Convert.ToInt32(verwaltungToDelete)]);
                     Console.Clear();
                     NutzerMenu1();
                     break;

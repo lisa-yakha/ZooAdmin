@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\C#\\welp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|c:\\users\\user\\desktop\\c#\\welp\\zoo_administration\\zooverwaltung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|solutionrelative:zoo_administration\\zooverwaltung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|c:\\users\\user\\desktop\\c#\\welp\\zoo_administration\\verwaltung\\gehegeverwaltung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|solutionrelative:zoo_administration\\verwaltung\\gehegeverwaltung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +18,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GehegeVerwaltung.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#\\welp\\Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
+              "RelativeDocumentMoniker": "Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\C#\\welp\\Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
+              "RelativeToolTip": "Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAwwCoAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T12:46:16.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ZooVerwaltung.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#\\welp\\Zoo_Administration\\ZooVerwaltung.cs",
+              "RelativeDocumentMoniker": "Zoo_Administration\\ZooVerwaltung.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\C#\\welp\\Zoo_Administration\\ZooVerwaltung.cs",
+              "RelativeToolTip": "Zoo_Administration\\ZooVerwaltung.cs",
+              "ViewState": "AQIAACICAAAAAAAAAAAIwDYCAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T12:42:42.153Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
