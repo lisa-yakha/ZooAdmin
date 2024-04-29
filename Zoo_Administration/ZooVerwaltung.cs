@@ -81,7 +81,7 @@ public class ZooVerwaltung
         Mitarbeiter mitarbeiter = mitarbeiterListe.FirstOrDefault(m => m.getMitarbeiterNr() == mitarbeiterNr);
 
         if (mitarbeiter == null)
-            Console.WriteLine("Das Mitarbeiternummer ist falsch. Bitte starten Sie das Programm neu.");
+            Console.WriteLine("Die Mitarbeiternummer ist falsch. Bitte starten Sie das Programm neu.");
         else
         {
             Console.WriteLine("Geben Sie das Passwort ein:");
@@ -91,7 +91,7 @@ public class ZooVerwaltung
             {
                 if (mitarbeiter.getName() == "Hildegard Grün")
                 {
-                    //TODO: Ausgabe aller Tiere hinzufügen
+                    VerarbeiteNutzerEingabeOption1("1");
                     Console.WriteLine("Willkommen in der Zoo Verwaltungs Software!");
                 }
                 else
