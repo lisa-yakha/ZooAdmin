@@ -201,19 +201,10 @@ public class ZooVerwaltung
                     Console.WriteLine("Gib das Alter des Tieres an");
                     string tierAlter = NutzerEingabe();
                     Console.Clear();
-
-
                     Console.WriteLine("Gib die Gehegenummer ein, in die das Tier soll.\n");
-                    string gehegeNummer ="";
-
                     //alle gehege ausgeben damit der Nutzer eins wählen kann
-                    foreach (Gehege currentGehege in gehegeListe)
-                    {
-                        Console.WriteLine(currentGehege);
-                    }
-
+                    VerarbeiteNutzerEingabeOption1("3");
                     string chooseGehege = NutzerEingabe();
-                 
                     if(Convert.ToInt32(chooseGehege) > gehegeListe.Count || Convert.ToInt32(chooseGehege) < 1)
                     {
                         Console.WriteLine("Bitte gib ein Gültiges Gehege ein.");
@@ -221,37 +212,20 @@ public class ZooVerwaltung
                         Console.Clear();
                         TierVerwaltung();
                     }
-                    else
-                    {
-                        foreach (Gehege DeleteGehege in gehegeListe)
-                        {
-                            if (DeleteGehege.getGehegeNr() == Convert.ToInt32(chooseGehege))
-                            {
-                                gehegeNummer = chooseGehege;
-                                break;
-                            }
-                        }
-                    }
                     Console.Clear();
-
-
                     Console.WriteLine("Gib den Namen des Tieres an");
                     string tierName = NutzerEingabe();
                     Console.Clear();
                     Console.WriteLine("Gib die Art des Tieres an");
                     string tierArt = NutzerEingabe();
-                    tierListe.Add(new Tier(newTierID, Convert.ToInt32(tierAlter), Convert.ToInt32(gehegeNummer), tierName, tierArt));
+                    tierListe.Add(new Tier(newTierID, Convert.ToInt32(tierAlter), Convert.ToInt32(chooseGehege), tierName, tierArt));
                     Console.WriteLine("Tier erstellt: ");
                     Console.WriteLine(tierListe[newTierID]);
                     Console.Clear();
                     NutzerMenu1();
                     break;
                 case "2":
-                    foreach(Tier tierEntry in tierListe)
-                    {
-                        //call method to output every animal to see what to delete, and to see ID
-                        Console.WriteLine(tierEntry);
-                    }
+                    VerarbeiteNutzerEingabeOption1("1");
                     Console.WriteLine("\nWelches Tier soll gelöscht werden? Bitte gib eine Tiernummer ein");
                     string deleteAt = NutzerEingabe();
                     foreach (Tier tier in tierListe)
@@ -326,10 +300,7 @@ public class ZooVerwaltung
                     NutzerMenu1();
                     break;
                 case "2":
-                    foreach(Mitarbeiter arbeiter in mitarbeiterListe)
-                    {
-                        Console.WriteLine(arbeiter);
-                    }
+                    VerarbeiteNutzerEingabeOption1("2");
 
                     Console.WriteLine("\nWelcher Mitarbeiter soll gelöscht werden? Bitte gib eine Tiernummer ein");
                     string deleteAt = NutzerEingabe();
@@ -402,11 +373,7 @@ public class ZooVerwaltung
                     NutzerMenu1();
                     break;
                 case "2":
-                    foreach (Gehege currentGehege in gehegeListe)
-                    {
-                        Console.WriteLine(currentGehege);
-                    }
-
+                    VerarbeiteNutzerEingabeOption1("3");
                     Console.WriteLine("\nWelches Gehege soll gelöscht werden? Bitte gib eine Gehegenummer ein");
                     string deleteAt = NutzerEingabe();
                     foreach (Gehege DeleteGehege in gehegeListe)
@@ -555,13 +522,7 @@ public class ZooVerwaltung
 
                     }
                 case "2":
-                    List<GMTupel> GehegeVerwaltungsListe = gehegeVerwaltung.AlleAusgeben();
-                    int indexOfOBJ = 0;
-                    foreach(GMTupel TupleToPrint in GehegeVerwaltungsListe)
-                    {
-                        Console.WriteLine("" + indexOfOBJ + ", " + TupleToPrint.Gehege.getBezeichnung() + ", " + TupleToPrint.Mitarbeiter1.Name + ", " + TupleToPrint.Mitarbeiter2.Name);
-                        indexOfOBJ++;
-                    }
+                    VerarbeiteNutzerEingabeOption1("4");
                     Console.WriteLine("\n Gib die Nummer der zu Löschenden Gehegeverwaltung ein");
                     string verwaltungToDelete = NutzerEingabe();
                     gehegeVerwaltung.Loeschen(GehegeVerwaltungsListe[Convert.ToInt32(verwaltungToDelete)]);
