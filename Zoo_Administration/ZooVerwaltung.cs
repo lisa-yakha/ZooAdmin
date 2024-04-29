@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using verwaltungen;
 using Zoo_Administration.General;
+using static System.Net.WebRequestMethods;
 
 public class ZooVerwaltung
 {
@@ -197,26 +198,45 @@ public class ZooVerwaltung
 		}
 	}
 
-	/// <summary>
-	/// Bearbeitet die Antwort des Nutzers auf Option 1
-	/// </summary>
-	/// <param name="antwort">Die Antwort des Nutzers auf Option 1</param>
-	public static void VerarbeiteNutzerEingabeOption1(string antwort)
+    /// 
+    public static void ZeigeListe<T>(List<T> list)
+    {
+        foreach (var item in list)
+        {
+            Console.WriteLine(item);             
+        }
+
+        Console.WriteLine("\nDrücken Sie eine beliebige Taste, um zum Hauptmenü zurückzukehren.");
+        Console.ReadKey();
+        Console.Clear();
+        NutzerMenu1();
+    }
+
+    /// <summary>
+    /// Bearbeitet die Antwort des Nutzers auf Option 1
+    /// </summary>
+    /// <param name="antwort">Die Antwort des Nutzers auf Option 1</param>
+    public static void VerarbeiteNutzerEingabeOption1(string antwort)
 	{
 		int nummer = NummerVonEingabe(antwort);
-		switch (nummer)
-		{
+        switch (nummer)
+        {
 			case 1:
-				//Gib alle Tiere aus
-				break;
+
+                var tiereSortiert = tierListe.OrderBy(obj  => obj.Art).ToList();
+                ZeigeListe(tiereSortiert);
+                break;
 			case 2:
-				//Gib alle Mitarbeiter aus
-				break;
+                var mitarbeiterSortiert = mitarbeiterListe.OrderBy(obj => obj.JobBezeichnung).ToList();
+                ZeigeListe(mitarbeiterSortiert);
+                break;
 			case 3:
-				//Gib alle Gehege aus
+                var gehegeSortiert = gehegeListe.OrderBy(obj => obj.GehegeNr).ToList();
+                ZeigeListe(gehegeSortiert);
 				break;
 			case 4:
-				//Gib die Gehegeverwaltung aus
+                ZeigeListe(gehegeVerwaltung.VerwaltungsListe); //Zeigt leider nicht Tupel in einzelnen Zeilen an
+                
 				break;
 			default:
 				Console.WriteLine("Das war keine gültige Eingabe.");

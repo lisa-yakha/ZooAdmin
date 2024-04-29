@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nutzer\\source\\repos\\Zoo_Administration\\Zoo_Administration\\Zoo_Administration.csproj": {}
+    "C:\\Users\\san3s\\Source\\Repos\\GroupAssignment1\\Zoo_Administration\\Zoo_Administration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nutzer\\source\\repos\\Zoo_Administration\\Zoo_Administration\\Zoo_Administration.csproj": {
+    "C:\\Users\\san3s\\Source\\Repos\\GroupAssignment1\\Zoo_Administration\\Zoo_Administration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nutzer\\source\\repos\\Zoo_Administration\\Zoo_Administration\\Zoo_Administration.csproj",
+        "projectUniqueName": "C:\\Users\\san3s\\Source\\Repos\\GroupAssignment1\\Zoo_Administration\\Zoo_Administration.csproj",
         "projectName": "Zoo_Administration",
-        "projectPath": "C:\\Users\\Nutzer\\source\\repos\\Zoo_Administration\\Zoo_Administration\\Zoo_Administration.csproj",
-        "packagesPath": "C:\\Users\\Nutzer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nutzer\\source\\repos\\Zoo_Administration\\Zoo_Administration\\obj\\",
+        "projectPath": "C:\\Users\\san3s\\Source\\Repos\\GroupAssignment1\\Zoo_Administration\\Zoo_Administration.csproj",
+        "packagesPath": "C:\\Users\\san3s\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\san3s\\Source\\Repos\\GroupAssignment1\\Zoo_Administration\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Nutzer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\san3s\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -59,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
