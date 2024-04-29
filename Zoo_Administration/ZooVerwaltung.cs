@@ -207,11 +207,16 @@ public class ZooVerwaltung
             Console.WriteLine(item);             
         }
 
+    }
+
+    public static void ZurueckzuMenue1()
+    {
         Console.WriteLine("\nDrücken Sie eine beliebige Taste, um zum Hauptmenü zurückzukehren.");
         Console.ReadKey();
         Console.Clear();
         NutzerMenu1();
     }
+
 
 /// <summary>
 /// Bearbeitet die Antwort des Nutzers auf Option 1
@@ -226,15 +231,18 @@ public static void VerarbeiteNutzerEingabeOption1(string antwort)
 
                 var tiereSortiert = tierListe.OrderBy(obj  => obj.Art).ToList();
                 ZeigeListe(tiereSortiert);
+                ZurueckzuMenue1();
                 break;
 			case 2:
                 var mitarbeiterSortiert = mitarbeiterListe.OrderBy(obj => obj.JobBezeichnung).ToList();
                 ZeigeListe(mitarbeiterSortiert);
+                ZurueckzuMenue1();
                 break;
 			case 3:
                 var gehegeSortiert = gehegeListe.OrderBy(obj => obj.GehegeNr).ToList();
                 ZeigeListe(gehegeSortiert);
-				break;
+                ZurueckzuMenue1();
+                break;
 			case 4:
                 List<GMTupel> GehegeVerwaltungsListe = gehegeVerwaltung.AlleAusgeben();
                 int indexOfOBJ = 0;
@@ -243,6 +251,7 @@ public static void VerarbeiteNutzerEingabeOption1(string antwort)
                     Console.WriteLine("" + indexOfOBJ + ", " + TupleToPrint.Gehege.getBezeichnung() + ", " + TupleToPrint.Mitarbeiter1.Name + ", " + TupleToPrint.Mitarbeiter2.Name);
                     indexOfOBJ++;
                 }
+                ZurueckzuMenue1();
                 break;
 			default:
 				Console.WriteLine("Das war keine gültige Eingabe.");
