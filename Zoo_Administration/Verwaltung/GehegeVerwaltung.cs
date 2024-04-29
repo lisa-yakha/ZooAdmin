@@ -10,6 +10,12 @@ namespace verwaltungen
     {
         private List<GMTupel> verwaltungsListe;
 
+        // Zugriff auf verwaltungsListe in anderen Klassen
+
+        public List<GMTupel> AlleAusgeben()
+        {
+            return verwaltungsListe; 
+        }
         /**
          * In dieser Gehegeverwaltung gibt es je eine Liste für Mitarbeiter und Gehege,
          * diese müssen noch befüllt werden.

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using verwaltungen;
 using Zoo_Administration.General;
+using Zoo_Administration.Verwaltung.tupeln;
+using static System.Net.WebRequestMethods;
 
 public class ZooVerwaltung
 {
@@ -207,29 +209,63 @@ public class ZooVerwaltung
 			//Verarbeite die Nutzerantwort für die Ausgabe
 			VerarbeiteNutzerEingabeOption1(antwort);
 		}
+
+        ZurueckzuMenue1();
 	}
 
-	/// <summary>
-	/// Bearbeitet die Antwort des Nutzers auf Option 1
-	/// </summary>
-	/// <param name="antwort">Die Antwort des Nutzers auf Option 1</param>
-	public static void VerarbeiteNutzerEingabeOption1(string antwort)
+    //Methode zum Zurückk
+     public static void ZurueckzuMenue1()
+     { 
+        Console.WriteLine("\nDrücken Sie eine beliebige Taste, um zum Hauptmenü zurückzukehren.");
+        Console.ReadKey();
+        Console.Clear();
+        NutzerMenu1();
+     }
+    
+    // Loop zum Auslesen der einzelnen Listen
+    public static void ZeigeListe<T>(List<T> list)
+    {
+        foreach (var item in list)
+        {
+            Console.WriteLine(item);             
+        }
+
+    }
+
+
+
+
+/// <summary>
+/// Bearbeitet die Antwort des Nutzers auf Option 1
+/// </summary>
+/// <param name="antwort">Die Antwort des Nutzers auf Option 1</param>
+public static void VerarbeiteNutzerEingabeOption1(string antwort)
 	{
 		int nummer = NummerVonEingabe(antwort);
-		switch (nummer)
-		{
+        switch (nummer)
+        {
 			case 1:
-				//Gib alle Tiere aus
-				break;
+
+                var tiereSortiert = tierListe.OrderBy(obj  => obj.Art).ToList();
+                ZeigeListe(tiereSortiert);
+                break;
 			case 2:
-				//Gib alle Mitarbeiter aus
-				break;
+                var mitarbeiterSortiert = mitarbeiterListe.OrderBy(obj => obj.JobBezeichnung).ToList();
+                ZeigeListe(mitarbeiterSortiert);
+                break;
 			case 3:
-				//Gib alle Gehege aus
-				break;
+                var gehegeSortiert = gehegeListe.OrderBy(obj => obj.GehegeNr).ToList();
+                ZeigeListe(gehegeSortiert);
+                break;
 			case 4:
-				//Gib die Gehegeverwaltung aus
-				break;
+                List<GMTupel> GehegeVerwaltungsListe = gehegeVerwaltung.AlleAusgeben();
+                int indexOfOBJ = 0;
+                foreach (GMTupel TupleToPrint in GehegeVerwaltungsListe)
+                {
+                    Console.WriteLine("" + indexOfOBJ + ", " + TupleToPrint.Gehege.getBezeichnung() + ", " + TupleToPrint.Mitarbeiter1.Name + ", " + TupleToPrint.Mitarbeiter2.Name);
+                    indexOfOBJ++;
+                }
+                break;
 			default:
 				Console.WriteLine("Das war keine gültige Eingabe.");
 				NutzerMenu1();
