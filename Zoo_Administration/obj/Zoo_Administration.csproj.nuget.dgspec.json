@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\san3s\\source\\repos\\GroupAssignment1\\Zoo_Administration\\Zoo_Administration.csproj": {}
+    "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\Zoo_Administration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\san3s\\source\\repos\\GroupAssignment1\\Zoo_Administration\\Zoo_Administration.csproj": {
+    "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\Zoo_Administration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\san3s\\source\\repos\\GroupAssignment1\\Zoo_Administration\\Zoo_Administration.csproj",
+        "projectUniqueName": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\Zoo_Administration.csproj",
         "projectName": "Zoo_Administration",
-        "projectPath": "C:\\Users\\san3s\\source\\repos\\GroupAssignment1\\Zoo_Administration\\Zoo_Administration.csproj",
-        "packagesPath": "C:\\Users\\san3s\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\san3s\\source\\repos\\GroupAssignment1\\Zoo_Administration\\obj\\",
+        "projectPath": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\Zoo_Administration.csproj",
+        "packagesPath": "C:\\Users\\Standartbenutzer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\san3s\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Standartbenutzer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

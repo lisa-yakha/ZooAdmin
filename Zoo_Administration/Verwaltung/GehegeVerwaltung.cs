@@ -37,6 +37,12 @@ namespace verwaltungen
             verwaltungsListe.Add(gmTupel);
         }
 
+        //ausgeben alle einträge
+        public List<GMTupel> AlleAusgeben()
+        {
+            return verwaltungsListe;
+        }
+
         /**
          * Löscht für eine MitarbeiterNummer alle Einträge, dies könnte bedeuten, dass ein Gehege keine Verwaltung mehr hat
          * @param mitarbeiterNr Zu löschen.
