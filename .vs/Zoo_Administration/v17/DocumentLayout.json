@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Zoo_Administration\\ZooVerwaltung.cs",
               "ToolTip": "C:\\Users\\san3s\\source\\repos\\GroupAssignment1\\Zoo_Administration\\ZooVerwaltung.cs",
               "RelativeToolTip": "Zoo_Administration\\ZooVerwaltung.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwO0AAABwAAAA",
+              "ViewState": "AQIAAAsBAAAAAAAAAADgv/QAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-26T09:38:08.572Z",
               "EditorCaption": ""
@@ -70,7 +70,7 @@
               "RelativeDocumentMoniker": "Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
               "ToolTip": "C:\\Users\\san3s\\source\\repos\\GroupAssignment1\\Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
               "RelativeToolTip": "Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAsAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-26T09:38:08.807Z",
               "EditorCaption": ""
@@ -85,8 +85,7 @@
               "RelativeToolTip": "Zoo_Administration\\General\\Mitarbeiter.cs",
               "ViewState": "AQIAADUAAAAAAAAAAAAmwEMAAACVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T09:38:08.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T09:38:08.808Z"
             },
             {
               "$type": "Document",
@@ -98,8 +97,7 @@
               "RelativeToolTip": "Zoo_Administration\\General\\Tiere.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAEoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T09:38:08.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T09:38:08.808Z"
             },
             {
               "$type": "Document",
@@ -111,8 +109,7 @@
               "RelativeToolTip": "Zoo_Administration\\General\\Gehege.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T09:38:08.81Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T09:38:08.81Z"
             }
           ]
         }

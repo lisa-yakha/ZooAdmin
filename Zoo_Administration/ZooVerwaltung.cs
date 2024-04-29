@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using verwaltungen;
 using Zoo_Administration.General;
+using Zoo_Administration.Verwaltung.tupeln;
 using static System.Net.WebRequestMethods;
 
 public class ZooVerwaltung
@@ -212,11 +213,11 @@ public class ZooVerwaltung
         NutzerMenu1();
     }
 
-    /// <summary>
-    /// Bearbeitet die Antwort des Nutzers auf Option 1
-    /// </summary>
-    /// <param name="antwort">Die Antwort des Nutzers auf Option 1</param>
-    public static void VerarbeiteNutzerEingabeOption1(string antwort)
+/// <summary>
+/// Bearbeitet die Antwort des Nutzers auf Option 1
+/// </summary>
+/// <param name="antwort">Die Antwort des Nutzers auf Option 1</param>
+public static void VerarbeiteNutzerEingabeOption1(string antwort)
 	{
 		int nummer = NummerVonEingabe(antwort);
         switch (nummer)
@@ -235,9 +236,14 @@ public class ZooVerwaltung
                 ZeigeListe(gehegeSortiert);
 				break;
 			case 4:
-                ZeigeListe(gehegeVerwaltung.VerwaltungsListe); //Zeigt leider nicht Tupel in einzelnen Zeilen an
-                
-				break;
+                List<GMTupel> GehegeVerwaltungsListe = gehegeVerwaltung.AlleAusgeben();
+                int indexOfOBJ = 0;
+                foreach (GMTupel TupleToPrint in GehegeVerwaltungsListe)
+                {
+                    Console.WriteLine("" + indexOfOBJ + ", " + TupleToPrint.Gehege.getBezeichnung() + ", " + TupleToPrint.Mitarbeiter1.Name + ", " + TupleToPrint.Mitarbeiter2.Name);
+                    indexOfOBJ++;
+                }
+                break;
 			default:
 				Console.WriteLine("Das war keine gültige Eingabe.");
 				NutzerMenu1();
