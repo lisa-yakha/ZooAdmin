@@ -79,21 +79,33 @@ public class ZooVerwaltung
         {
             mitarbeiterNr = NummerVonEingabe(antwort);
         }
+        Mitarbeiter mitarbeiter = mitarbeiterListe.FirstOrDefault(m => m.getMitarbeiterNr() == mitarbeiterNr);
 
-        if (mitarbeiterNr == 1 || mitarbeiterNr == 2)
-        {
-            Console.WriteLine("Geben Sie das Passwort ein:");
-            string passwort = NutzerEingabe();
-            if (passwort == "12345")
-            {
-                Console.WriteLine("Willkommen in der Zoo Verwaltungs Software!");
-                NutzerMenu1();
-            }
-        }
+        if (mitarbeiter == null)
+            Console.WriteLine("Die Mitarbeiternummer ist falsch. Bitte starten Sie das Programm neu.");
         else
         {
-            Console.WriteLine("Sie haben keine valide Nummer eingegeben. Bitte starten Sie das Programm neu.");
+            Console.WriteLine("Geben Sie das Passwort ein:");
+            string passwortEingabe = NutzerEingabe();
+
+            if (passwortEingabe == mitarbeiter.getPasswort())
+            {
+                if (mitarbeiter.getName() == "Hildegard Grün")
+                {
+                    VerarbeiteNutzerEingabeOption1("1");
+                    Console.WriteLine("Willkommen in der Zoo Verwaltungs Software!");
+                }
+                else
+                    Console.WriteLine("Willkommen in der Zoo Verwaltungs Software!");
+                NutzerMenu1();
+            }
+            else
+            {
+                Console.WriteLine("Das Passwort ist falsch. Bitte starten Sie das Programm neu.");
+            }
+
         }
+
     }
     /// <summary>
     /// Nutzer Eingabe
@@ -405,32 +417,53 @@ public class ZooVerwaltung
     }
 
     public static void NutzerOption1()
-	{
-		//Mögliche Nutzer anfragen
-		string[] nutzerFragen = new string[]
-		{
-			"1) Gib alle Tiere aus.",
-			"2) Gib alle Mitarbeiter aus.",
-			"3) Gib alle Gehege aus.",
-			"4) Gib die Gehegeverwaltung aus."
-		};
+    {
+        //Mögliche Nutzer anfragen
+        string[] nutzerFragen = new string[]
+        {
+            "1) Gib alle Tiere aus.",
+            "2) Gib alle Mitarbeiter aus.",
+            "3) Gib alle Gehege aus.",
+            "4) Gib die Gehegeverwaltung aus."
+        };
 
-		//Frage den Nutzer was er ausgeben möchte:
-		Console.WriteLine("Was wollen Sie ausgeben? Geben Sie eine Zahl ein:");
-		foreach (string frage in nutzerFragen)
-		{
-			Console.WriteLine(frage);
-		}
+        //Frage den Nutzer was er ausgeben möchte:
+        Console.WriteLine("Was wollen Sie ausgeben? Geben Sie eine Zahl ein:");
+        foreach (string frage in nutzerFragen)
+        {
+            Console.WriteLine(frage);
+        }
 
-		string antwort = NutzerEingabe();
+        string antwort = NutzerEingabe();
 
-		//Verarbeite die Antwort des Nutzers (Sollte eine Zahl von 1 bis 5 sein.)
-		if (!string.IsNullOrEmpty(antwort))
-		{
-			//Verarbeite die Nutzerantwort für die Ausgabe
-			VerarbeiteNutzerEingabeOption1(antwort);
-		}
-	}
+        //Verarbeite die Antwort des Nutzers (Sollte eine Zahl von 1 bis 5 sein.)
+        if (!string.IsNullOrEmpty(antwort))
+        {
+            //Verarbeite die Nutzerantwort für die Ausgabe
+            VerarbeiteNutzerEingabeOption1(antwort);
+        }
+
+        ZurueckzuMenue1();
+    }
+
+    //Methode zum Zurückk
+    public static void ZurueckzuMenue1()
+    {
+        Console.WriteLine("\nDrücken Sie eine beliebige Taste, um zum Hauptmenü zurückzukehren.");
+        Console.ReadKey();
+        Console.Clear();
+        NutzerMenu1();
+    }
+
+    // Loop zum Auslesen der einzelnen Listen
+    public static void ZeigeListe<T>(List<T> list)
+    {
+        foreach (var item in list)
+        {
+            Console.WriteLine(item);
+        }
+
+    }
 
     public static void GehegeVerlwatungVerwalten()
     {
@@ -545,33 +578,44 @@ public class ZooVerwaltung
         }
     }
 
-	/// <summary>
-	/// Bearbeitet die Antwort des Nutzers auf Option 1
-	/// </summary>
-	/// <param name="antwort">Die Antwort des Nutzers auf Option 1</param>
-	public static void VerarbeiteNutzerEingabeOption1(string antwort)
-	{
-		int nummer = NummerVonEingabe(antwort);
-		switch (nummer)
-		{
-			case 1:
-				//Gib alle Tiere aus
-				break;
-			case 2:
-				//Gib alle Mitarbeiter aus
-				break;
-			case 3:
-				//Gib alle Gehege aus
-				break;
-			case 4:
-				//Gib die Gehegeverwaltung aus
-				break;
-			default:
-				Console.WriteLine("Das war keine gültige Eingabe.");
-				NutzerMenu1();
-				break;
-		}
-	}
+    /// <summary>
+    /// Bearbeitet die Antwort des Nutzers auf Option 1
+    /// </summary>
+    /// <param name="antwort">Die Antwort des Nutzers auf Option 1</param>
+    public static void VerarbeiteNutzerEingabeOption1(string antwort)
+    {
+        int nummer = NummerVonEingabe(antwort);
+        switch (nummer)
+        {
+            case 1:
+
+                var tiereSortiert = tierListe.OrderBy(obj => obj.Art).ToList();
+                ZeigeListe(tiereSortiert);
+                break;
+            case 2:
+                var mitarbeiterSortiert = mitarbeiterListe.OrderBy(obj => obj.JobBezeichnung).ToList();
+                ZeigeListe(mitarbeiterSortiert);
+                break;
+            case 3:
+                var gehegeSortiert = gehegeListe.OrderBy(obj => obj.GehegeNr).ToList();
+                ZeigeListe(gehegeSortiert);
+                break;
+            case 4:
+                List<GMTupel> GehegeVerwaltungsListe = gehegeVerwaltung.AlleAusgeben();
+                int indexOfOBJ = 0;
+                foreach (GMTupel TupleToPrint in GehegeVerwaltungsListe)
+                {
+                    Console.WriteLine("" + indexOfOBJ + ", " + TupleToPrint.Gehege.getBezeichnung() + ", " + TupleToPrint.Mitarbeiter1.Name + ", " + TupleToPrint.Mitarbeiter2.Name);
+                    indexOfOBJ++;
+                }
+                break;
+            default:
+                Console.WriteLine("Das war keine gültige Eingabe.");
+                NutzerMenu1();
+                break;
+        }
+    }
+
 
     /// <summary>
     /// Initialisiert die Zoo Verwaltung mit hardcodierten Daten
@@ -592,15 +636,16 @@ public class ZooVerwaltung
         gehegeListe.Add(gehege3);
 
         // Erschaffe Mitarbeiter
-        mitarbeiterListe.Add(new Mitarbeiter(1, "Herbert Grün", 88, 6200, "ZoodirektorIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(2, "Hildegard Grün", 88, 6200, "ZoodirektorIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(3, "Hannelore Specht", 34, 2300, "TierpflegerIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(4, "Friedrich Müller", 45, 3200, "TierpflegerIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(5, "Elisa Grün", 23, 450, "KassiererIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(6, "Ali Mohammed", 19, 450, "KassiererIn"));
-        mitarbeiterListe.Add(new Mitarbeiter(7, "Marianne Jakobs", 23, 3100, "Verwaltungskraft"));
-        mitarbeiterListe.Add(new Mitarbeiter(8, "Niko Bart", 21, 3000, "Verwaltungskraft"));
-        mitarbeiterListe.Add(new Mitarbeiter(9, "Franz Hubert", 35, 3300, "Verwaltungskraft"));
+        mitarbeiterListe.Add(new Mitarbeiter(1, "Herbert Grün", 88, 6200, "ZoodirektorIn", "12345"));
+        mitarbeiterListe.Add(new Mitarbeiter(2, "Hildegard Grün", 88, 6200, "ZoodirektorIn", "12346"));
+        mitarbeiterListe.Add(new Mitarbeiter(3, "Hannelore Specht", 34, 2300, "TierpflegerIn", "98765"));
+        mitarbeiterListe.Add(new Mitarbeiter(4, "Friedrich Müller", 45, 3200, "TierpflegerIn", "56789"));
+        mitarbeiterListe.Add(new Mitarbeiter(5, "Elisa Grün", 23, 450, "KassiererIn", "13579"));
+        mitarbeiterListe.Add(new Mitarbeiter(6, "Ali Mohammed", 19, 450, "KassiererIn", "24680"));
+        mitarbeiterListe.Add(new Mitarbeiter(7, "Marianne Jakobs", 23, 3100, "Verwaltungskraft", "25912"));
+        mitarbeiterListe.Add(new Mitarbeiter(8, "Niko Bart", 21, 3000, "Verwaltungskraft", "25911"));
+        mitarbeiterListe.Add(new Mitarbeiter(9, "Franz Hubert", 35, 3300, "Verwaltungskraft", "25913"));
+
 
         // Erschaffe Tiere
         string[] loewen = { "Anton", "Bernd", "Claudia", "Ditrich" };

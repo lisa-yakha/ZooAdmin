@@ -1,32 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|c:\\users\\standartbenutzer\\desktop\\groupassignment\\zoo_administration\\zooverwaltung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|solutionrelative:zoo_administration\\zooverwaltung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|c:\\users\\standartbenutzer\\desktop\\groupassignment\\zoo_administration\\verwaltung\\tupeln\\gmtupel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|solutionrelative:zoo_administration\\verwaltung\\tupeln\\gmtupel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|c:\\users\\standartbenutzer\\desktop\\groupassignment\\zoo_administration\\verwaltung\\gehegeverwaltung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|solutionrelative:zoo_administration\\verwaltung\\gehegeverwaltung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|c:\\users\\standartbenutzer\\desktop\\groupassignment\\zoo_administration\\general\\mitarbeiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|solutionrelative:zoo_administration\\general\\mitarbeiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|c:\\users\\standartbenutzer\\desktop\\groupassignment\\zoo_administration\\general\\gehege.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|solutionrelative:zoo_administration\\general\\gehege.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|c:\\users\\standartbenutzer\\desktop\\groupassignment\\zoo_administration\\general\\tiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C38334A8-0FB9-4E94-A0E5-E86ED0039C1C}|Zoo_Administration\\Zoo_Administration.csproj|solutionrelative:zoo_administration\\general\\tiere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\C#\\welp\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,89 +17,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ZooVerwaltung.cs",
-              "DocumentMoniker": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\ZooVerwaltung.cs",
-              "RelativeDocumentMoniker": "Zoo_Administration\\ZooVerwaltung.cs",
-              "ToolTip": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\ZooVerwaltung.cs",
-              "RelativeToolTip": "Zoo_Administration\\ZooVerwaltung.cs",
-              "ViewState": "AQIAANABAAAAAAAAAAAwwBUCAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T07:40:12.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GMTupel.cs",
-              "DocumentMoniker": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\Verwaltung\\tupeln\\GMTupel.cs",
-              "RelativeDocumentMoniker": "Zoo_Administration\\Verwaltung\\tupeln\\GMTupel.cs",
-              "ToolTip": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\Verwaltung\\tupeln\\GMTupel.cs",
-              "RelativeToolTip": "Zoo_Administration\\Verwaltung\\tupeln\\GMTupel.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAcwAsAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T07:40:12.238Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GehegeVerwaltung.cs",
-              "DocumentMoniker": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
-              "RelativeDocumentMoniker": "Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
-              "ToolTip": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
-              "RelativeToolTip": "Zoo_Administration\\Verwaltung\\GehegeVerwaltung.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAwwB8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T07:40:12.251Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Mitarbeiter.cs",
-              "DocumentMoniker": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\General\\Mitarbeiter.cs",
-              "RelativeDocumentMoniker": "Zoo_Administration\\General\\Mitarbeiter.cs",
-              "ToolTip": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\General\\Mitarbeiter.cs",
-              "RelativeToolTip": "Zoo_Administration\\General\\Mitarbeiter.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAAwA4AAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T07:40:12.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Tiere.cs",
-              "DocumentMoniker": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\General\\Tiere.cs",
-              "RelativeDocumentMoniker": "Zoo_Administration\\General\\Tiere.cs",
-              "ToolTip": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\General\\Tiere.cs",
-              "RelativeToolTip": "Zoo_Administration\\General\\Tiere.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T07:40:12.272Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Gehege.cs",
-              "DocumentMoniker": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\General\\Gehege.cs",
-              "RelativeDocumentMoniker": "Zoo_Administration\\General\\Gehege.cs",
-              "ToolTip": "C:\\Users\\Standartbenutzer\\Desktop\\GroupAssignment\\Zoo_Administration\\General\\Gehege.cs",
-              "RelativeToolTip": "Zoo_Administration\\General\\Gehege.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwA0AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T07:40:12.283Z"
             }
           ]
         }

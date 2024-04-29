@@ -13,3 +13,11 @@ C:\Users\Standartbenutzer\Desktop\GroupAssignment\Zoo_Administration\obj\Debug\n
 C:\Users\Standartbenutzer\Desktop\GroupAssignment\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.pdb
 C:\Users\Standartbenutzer\Desktop\GroupAssignment\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.genruntimeconfig.cache
 C:\Users\Standartbenutzer\Desktop\GroupAssignment\Zoo_Administration\obj\Debug\net8.0\ref\Zoo_Administration.dll
+C:\Users\user\Desktop\C#\welp\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\C#\welp\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\C#\welp\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.AssemblyInfo.cs
+C:\Users\user\Desktop\C#\welp\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\C#\welp\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.sourcelink.json
+C:\Users\user\Desktop\C#\welp\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.dll
+C:\Users\user\Desktop\C#\welp\Zoo_Administration\obj\Debug\net8.0\refint\Zoo_Administration.dll
+C:\Users\user\Desktop\C#\welp\Zoo_Administration\obj\Debug\net8.0\Zoo_Administration.pdb
