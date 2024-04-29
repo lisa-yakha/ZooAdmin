@@ -197,9 +197,20 @@ public class ZooVerwaltung
 			//Verarbeite die Nutzerantwort für die Ausgabe
 			VerarbeiteNutzerEingabeOption1(antwort);
 		}
+
+        ZurueckzuMenue1();
 	}
 
-    /// 
+    //Methode zum Zurückk
+     public static void ZurueckzuMenue1()
+     { 
+        Console.WriteLine("\nDrücken Sie eine beliebige Taste, um zum Hauptmenü zurückzukehren.");
+        Console.ReadKey();
+        Console.Clear();
+        NutzerMenu1();
+     }
+    
+    // Loop zum Auslesen der einzelnen Listen
     public static void ZeigeListe<T>(List<T> list)
     {
         foreach (var item in list)
@@ -209,13 +220,7 @@ public class ZooVerwaltung
 
     }
 
-    public static void ZurueckzuMenue1()
-    {
-        Console.WriteLine("\nDrücken Sie eine beliebige Taste, um zum Hauptmenü zurückzukehren.");
-        Console.ReadKey();
-        Console.Clear();
-        NutzerMenu1();
-    }
+
 
 
 /// <summary>
@@ -231,17 +236,14 @@ public static void VerarbeiteNutzerEingabeOption1(string antwort)
 
                 var tiereSortiert = tierListe.OrderBy(obj  => obj.Art).ToList();
                 ZeigeListe(tiereSortiert);
-                ZurueckzuMenue1();
                 break;
 			case 2:
                 var mitarbeiterSortiert = mitarbeiterListe.OrderBy(obj => obj.JobBezeichnung).ToList();
                 ZeigeListe(mitarbeiterSortiert);
-                ZurueckzuMenue1();
                 break;
 			case 3:
                 var gehegeSortiert = gehegeListe.OrderBy(obj => obj.GehegeNr).ToList();
                 ZeigeListe(gehegeSortiert);
-                ZurueckzuMenue1();
                 break;
 			case 4:
                 List<GMTupel> GehegeVerwaltungsListe = gehegeVerwaltung.AlleAusgeben();
@@ -251,7 +253,6 @@ public static void VerarbeiteNutzerEingabeOption1(string antwort)
                     Console.WriteLine("" + indexOfOBJ + ", " + TupleToPrint.Gehege.getBezeichnung() + ", " + TupleToPrint.Mitarbeiter1.Name + ", " + TupleToPrint.Mitarbeiter2.Name);
                     indexOfOBJ++;
                 }
-                ZurueckzuMenue1();
                 break;
 			default:
 				Console.WriteLine("Das war keine gültige Eingabe.");
